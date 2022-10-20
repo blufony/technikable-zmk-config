@@ -48,7 +48,7 @@
         base_layer {
             label = "Base";
             bindings = <
-                &kp BKSP   &as(K)      &as(.)      &as(O)       &as(,)           &as(Z)          &as(V)            &as(G)          &as(C)       &as(L)      &as(MINUS)  &as(Y)
+                &kp BKSP   &as(K)      &as(DOT)    &as(O)       &as(COMMA)       &as(Z)          &as(V)            &as(G)          &as(C)       &as(L)      &as(MINUS)  &as(Y)
                 &kp TAB    &as(H)      &as(A)      &as(E)       &as(I)           &as(U)          &as(D)            &as(T)          &as(R)       &as(N)      &as(S)      &as(F)
                 &kp LCTRL  &as(X)      &as(Q)      &as(SQT)     &as(LBRKT)       &as(SEMI)       &as(B)            &as(P)          &as(W)       &as(M)      &as(J)      &as(T)
                                        &kp LGUI    &kp LGUI     &kp LC(LA(LGUI)) &lt NAV_L SPACE &lt NUM_L RET     &kp LC(LALT)    &kp LALT     &kp LALT
