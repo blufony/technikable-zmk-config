@@ -52,7 +52,7 @@
             label = "TAP_DANCE_QUOTES";
             #binding-cells = <0>;
             tapping-term-ms = <140>;
-            bindings = <&mt LS(N2) LS(NUHS)>, <&mt &double_quotes &single_quote>;
+            bindings = <&mt LS(N2) LS(NUHS)>, <&mt &d_quo &s_quo>;
         };
     };
 
