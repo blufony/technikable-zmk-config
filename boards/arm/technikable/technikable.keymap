@@ -24,6 +24,7 @@
 &lt { quick_tap_ms = <200>; };
 
 #define BT(n) BT_SEL n
+#define as(x) ht_hp LS(x) x
 
 / {
     chosen {
@@ -51,16 +52,10 @@
         base_layer {
             label = "Base";
             bindings = <
-                &kp BSPC   &kp K      &kp DOT    &kp O       &kp COMMA       &kp Z          &kp V            &kp G          &kp C       &kp L      &kp MINUS  &kp Y
-                &kp TAB    &kp H      &kp A      &kp E       &kp I           &kp U          &kp D            &kp T          &kp R       &kp N      &kp S      &kp F
-                &kp LCTRL  &kp X      &kp Q      &kp SQT     &kp LBKT        &kp SEMI       &kp B            &kp P          &kp W       &kp M      &kp J &kp T
-#ifdef TBLE_DUAL_2U
-                       &kp D  &kp N2      &kp U                &lt NUM_L SPACE              &kp RALT    &kp RCTRL
-#elif defined(TBLE_MIT)
-                       &kp M  &kp I    &kp T          &kp SPACE                   &mo NUM_L      &kp RALT    &kp RCTRL
-#else
-                                       &kp LGUI    &kp LGUI     &kp W &lt NAV_L SPACE &lt NUM_L RET     &kp W    &kp LALT     &kp LALT
-#endif
+                &kp BSPC   &as(K)      &as(DOT)    &as(O)       &as(COMMA)       &as(Z)          &as(V)            &as(G)          &as(C)       &as(L)      &as(MINUS)  &as(Y)
+                &kp TAB    &as(H)      &as(A)      &as(E)       &as(I)           &as(U)          &as(D)            &as(T)          &as(R)       &as(N)      &as(S)      &as(F)
+                &kp LCTRL  &as(X)      &as(Q)      &as(SQT)     &as(LBKT)        &as(SEMI)       &as(B)            &as(P)          &as(W)       &as(M)      &as(J)      &as(T)
+                                       &kp LGUI    &kp LGUI     &kp LC(LA(LGUI)) &lt NAV_L SPACE &lt NUM_L RET     &kp LC(LALT)    &kp LALT     &kp LALT
             >;
         };
 
