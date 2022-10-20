@@ -24,10 +24,6 @@
 &lt { quick_tap_ms = <200>; };
 
 #define BT(n) BT_SEL n
-#undef TBLE_MIT
-#undef TBLE_DUAL_2U
-
-#define as(X) ht_hp LS(X) X
 
 / {
     chosen {
