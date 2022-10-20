@@ -31,7 +31,14 @@
 
 / {
     chosen {
-       zmk,matrix_transform = &ortho_transform;
+       zmk,matrix_transform =
+#ifdef TBLE_DUAL_2U
+                       &dual_2u_transform;
+#elif defined(TBLE_MIT)
+                       &mit_transform;
+#else
+                       &ortho_transform;
+#endif
     };
 
     conditional_layers {
@@ -51,7 +58,13 @@
                 &kp BKSP   &as(K)      &as(DOT)    &as(O)       &as(COMMA)       &as(Z)          &as(V)            &as(G)          &as(C)       &as(L)      &as(MINUS)  &as(Y)
                 &kp TAB    &as(H)      &as(A)      &as(E)       &as(I)           &as(U)          &as(D)            &as(T)          &as(R)       &as(N)      &as(S)      &as(F)
                 &kp LCTRL  &as(X)      &as(Q)      &as(SQT)     &as(LBRKT)       &as(SEMI)       &as(B)            &as(P)          &as(W)       &as(M)      &as(J)      &as(T)
+#ifdef TBLE_DUAL_2U
+                       &kp D  &kp 2      &kp U                &lt NUM_L SPACE              &kp RALT    &kp RCTRL
+#elif defined(TBLE_MIT)
+                       &kp M  &kp I    &kp T          &kp SPACE                   &mo NUM_L      &kp RALT    &kp RCTRL
+#else
                                        &kp LGUI    &kp LGUI     &kp LC(LA(LGUI)) &lt NAV_L SPACE &lt NUM_L RET     &kp LC(LALT)    &kp LALT     &kp LALT
+#endif
             >;
         };
 
