@@ -53,7 +53,7 @@
             bindings = <
                 &kp BKSP   &kp K      &kp DOT    &kp O       &kp COMMA       &kp Z          &kp V            &kp G          &kp C       &kp L      &kp MINUS  &kp Y
                 &kp TAB    &kp H      &kp A      &kp E       &kp I           &kp U          &kp D            &kp T          &kp R       &kp N      &kp S      &kp F
-                &kp LCTRL  &kp X      &kp Q      &kp SQT     &kp LBRKT       &kp SEMI       &kp B            &kp P          &kp W       &kp M      &kp J      &kp T
+                &kp LCTRL  &kp X      &kp Q      &kp SQT     &kp LBRKT       &kp SEMI       &kp B            &kp P          &kp W       &kp M      &kp J &kp T
 #ifdef TBLE_DUAL_2U
                        &kp D  &kp 2      &kp U                &lt NUM_L SPACE              &kp RALT    &kp RCTRL
 #elif defined(TBLE_MIT)
