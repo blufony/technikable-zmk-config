@@ -24,7 +24,7 @@
 &lt { quick_tap_ms = <200>; };
 
 #define BT(n) BT_SEL n
-#define as(x) ht_hp LS(x) x
+#define as(x) mt LS(x) x
 
 / {
     chosen {
