@@ -57,8 +57,8 @@
     };
 
     macros {
-        d_quo: double_quotes {
-            label = "ZM_double_quotes";
+        d_quo: d_quo {
+            label = "ZM_d_quo";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms =<40>;
@@ -66,8 +66,8 @@
             bindings
                 = <&kp LS(N2) &kp LS(N2) &kp LEFT>;
         };
-        s_quo: single_quote {
-            label = "single_quote";
+        s_quo: s_quo {
+            label = "ZM_s_quo";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms =<40>;
