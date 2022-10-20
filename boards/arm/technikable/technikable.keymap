@@ -51,15 +51,15 @@
         base_layer {
             label = "Base";
             bindings = <
-                &kp BKSP   &kp K      &kp DOT    &kp O       &kp COMMA       &kp Z          &kp V            &kp G          &kp C       &kp L      &kp MINUS  &kp Y
+                &kp BSPC   &kp K      &kp DOT    &kp O       &kp COMMA       &kp Z          &kp V            &kp G          &kp C       &kp L      &kp MINUS  &kp Y
                 &kp TAB    &kp H      &kp A      &kp E       &kp I           &kp U          &kp D            &kp T          &kp R       &kp N      &kp S      &kp F
-                &kp LCTRL  &kp X      &kp Q      &kp SQT     &kp LBRKT       &kp SEMI       &kp B            &kp P          &kp W       &kp M      &kp J &kp T
+                &kp LCTRL  &kp X      &kp Q      &kp SQT     &kp LBKT        &kp SEMI       &kp B            &kp P          &kp W       &kp M      &kp J &kp T
 #ifdef TBLE_DUAL_2U
                        &kp D  &kp N2      &kp U                &lt NUM_L SPACE              &kp RALT    &kp RCTRL
 #elif defined(TBLE_MIT)
                        &kp M  &kp I    &kp T          &kp SPACE                   &mo NUM_L      &kp RALT    &kp RCTRL
 #else
-                                       &kp LGUI    &kp LGUI     &kp LC(LA(LGUI)) &lt NAV_L SPACE &lt NUM_L RET     &kp LC(LALT)    &kp LALT     &kp LALT
+                                       &kp LGUI    &kp LGUI     &kp W &lt NAV_L SPACE &lt NUM_L RET     &kp W    &kp LALT     &kp LALT
 #endif
             >;
         };
