@@ -47,16 +47,16 @@
     };
 
     behaviors {
-        quotes_macro: quotes_macro {
-            compatible = "zmk,behavior-hold-tap";
-            label = "QUOTES_MACRO";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <140>;
-            quick-tap-ms = <140>;
-            /* bindings = <&d_quo>, <&s_quo>; */
-            bindings = <&kp>, <&kp>;
-        };
+        /* quotes_macro: quotes_macro { */
+        /*     compatible = "zmk,behavior-hold-tap"; */
+        /*     label = "QUOTES_MACRO"; */
+        /*     #binding-cells = <2>; */
+        /*     flavor = "hold-preferred"; */
+        /*     tapping-term-ms = <140>; */
+        /*     quick-tap-ms = <140>; */
+        /*     /\* bindings = <&d_quo>, <&s_quo>; *\/ */
+        /*     bindings = <&kp>, <&kp>; */
+        /* }; */
         /* td_quo: tap_dance_quotes { */
         /*     compatible = "zmk,behavior-tap-dance"; */
         /*     label = "TAP_DANCE_QUOTES"; */
@@ -66,26 +66,26 @@
         /* }; */
     };
 
-    /* macros { */
-    /*     d_quo: d_quo { */
-    /*         label = "ZM_d_quo"; */
-    /*         compatible = "zmk,behavior-macro"; */
-    /*         #binding-cells = <0>; */
-    /*         wait-ms =<40>; */
-    /*         tap-ms =<40>; */
-    /*         bindings */
-    /*             = <&kp LS(N2) &kp LS(N2) &kp LEFT>; */
-    /*     }; */
-    /*     s_quo: s_quo { */
-    /*         label = "ZM_s_quo"; */
-    /*         compatible = "zmk,behavior-macro"; */
-    /*         #binding-cells = <0>; */
-    /*         wait-ms =<40>; */
-    /*         tap-ms =<40>; */
-    /*         bindings */
-    /*             = <&kp LS(NUHS) &kp LS(NUHS) &kp LEFT>; */
-    /*     }; */
-    /* }; */
+    macros {
+        d_quo: d_quo {
+            label = "ZM_d_quo";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms =<40>;
+            tap-ms =<40>;
+            bindings
+                = <&kp LS(N2) &kp LS(N2) &kp LEFT>;
+        };
+        s_quo: s_quo {
+            label = "ZM_s_quo";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms =<40>;
+            tap-ms =<40>;
+            bindings
+                = <&kp LS(NUHS) &kp LS(NUHS) &kp LEFT>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
