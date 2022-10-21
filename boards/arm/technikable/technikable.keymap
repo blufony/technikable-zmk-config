@@ -61,7 +61,7 @@
             label = "TAP_DANCE_QUOTES";
             #binding-cells = <0>;
             tapping-term-ms = <140>;
-            bindings = <&mt LS(N2) LS(NUHS)>, <&quotes_macro>;
+            bindings = <&mt LS(N2) LS(NUHS)>, <&quotes_macro 0 0>;
         };
     };
 
