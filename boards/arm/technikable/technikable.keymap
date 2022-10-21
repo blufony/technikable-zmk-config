@@ -50,7 +50,7 @@
         quotes_macro: quotes_macro {
             compatible = "zmk,behavior-hold-tap";
             label = "QUOTES_MACRO";
-            #binding-cells = <>;
+            #binding-cells = <0>;
             flavor = "hold-preferred";
             tapping-term-ms = <140>;
             quick-tap-ms = <140>;
