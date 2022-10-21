@@ -46,7 +46,7 @@
         };
     };
 
-#define hold_tap_tap_dance_two_macros(labl, a1, a2, m1, m2) ht_labl: ht_labl {\
+#define hold_tap_tap_dance_two_macros(labl, ht_labl, a1, a2, m1, m2) ht_labl: ht_labl {\
             compatible = "zmk,behavior-hold-tap";\
             label = "ht_labl";\
             #binding-cells = <2>;\
@@ -65,24 +65,26 @@
 
 
     behaviors {
-        hold_tap_tap_dance_two_macros(td_parents, LS(8), LS(9), &parents_in, &parents_out)
-        quotes_hold_tap: quotes_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "QUOTES_HOLD_TAP";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <140>;
-            quick-tap-ms = <140>;
-            /* bindings = <&d_quo>, <&s_quo>; */
-            bindings = <&s_quo>, <&d_quo>;
-        };
-        td_quo: tap_dance_quotes {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_QUOTES";
-            #binding-cells = <0>;
-            tapping-term-ms = <140>;
-            bindings = <&mt LS(NUHS) LS(N2)>, <&quotes_hold_tap 0 0>;
-        };
+        hold_tap_tap_dance_two_macros(td_parents, ht_td_parents, LS(N8), LS(N9), &parents_in, &parents_out)
+        hold_tap_tap_dance_two_macros(td_quo, quotes_hold_tap, LS(N2), LS(NUHS), &d_quo, &s_quo)
+
+        /* quotes_hold_tap: quotes_hold_tap { */
+        /*     compatible = "zmk,behavior-hold-tap"; */
+        /*     label = "QUOTES_HOLD_TAP"; */
+        /*     #binding-cells = <2>; */
+        /*     flavor = "hold-preferred"; */
+        /*     tapping-term-ms = <140>; */
+        /*     quick-tap-ms = <140>; */
+        /*     /\* bindings = <&d_quo>, <&s_quo>; *\/ */
+        /*     bindings = <&s_quo>, <&d_quo>; */
+        /* }; */
+        /* td_quo: tap_dance_quotes { */
+        /*     compatible = "zmk,behavior-tap-dance"; */
+        /*     label = "TAP_DANCE_QUOTES"; */
+        /*     #binding-cells = <0>; */
+        /*     tapping-term-ms = <140>; */
+        /*     bindings = <&mt LS(NUHS) LS(N2)>, <&quotes_hold_tap 0 0>; */
+        /* }; */
         brackets_hold_tap: brackets_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "BRACKETS_HOLD_TAP";
