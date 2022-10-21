@@ -55,7 +55,7 @@
             tapping-term-ms = <140>;
             quick-tap-ms = <140>;
             /* bindings = <&d_quo>, <&s_quo>; */
-            bindings = <&trans>, <&trans>;
+            bindings = <&kp>, <&kp>;
         };
         /* td_quo: tap_dance_quotes { */
         /*     compatible = "zmk,behavior-tap-dance"; */
