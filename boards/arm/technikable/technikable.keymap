@@ -47,12 +47,21 @@
     };
 
     behaviors {
+        mac_ht: macro_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MACRO-HOLD_TAP";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <140>;
+            quick-tap-ms = <140>;
+            bindings = <>, <>;
+        };
         td_quo: tap_dance_quotes {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_QUOTES";
             #binding-cells = <0>;
             tapping-term-ms = <140>;
-            bindings = <&mt LS(N2) LS(NUHS)>, <&mt &d_quo &s_quo>;
+            bindings = <&mt LS(N2) LS(NUHS)>, <&mac_ht &d_quo &s_quo>;
         };
     };
 
