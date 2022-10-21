@@ -48,7 +48,7 @@
 
 #define hold_tap_tap_dance_two_macros(labl, ht_labl, a1, a2, m1, m2) ht_labl: ht_labl {\
             compatible = "zmk,behavior-hold-tap";\
-            label = "ht_labl";\
+            label = #ht_labl;\
             #binding-cells = <2>;\
             flavor = "hold-preferred";\
             tapping-term-ms = <140>;\
@@ -57,7 +57,7 @@
         };\
     labl: labl {\
             compatible = "zmk,behavior-tap-dance";\
-            label = "labl";\
+            label = #labl;\
             #binding-cells = <0>;\
             tapping-term-ms = <140>;\
             bindings = <&mt a2 a1>, <&ht_labl 0 0>;\
@@ -106,7 +106,7 @@
     };
 
 #define two_macros(l1, l2, s1, s2) l1: l1 {\
-label = "l1";\
+label = #l1;\
  compatible =  "zmk,behavior-macro";\
             #binding-cells = <0>;\
             wait-ms =<40>;\
@@ -114,7 +114,7 @@ label = "l1";\
             bindings = s1;\
  };\
 l2: l2 {\
-label = "l2";\
+label = #l2;\
  compatible =  "zmk,behavior-macro";\
             #binding-cells = <0>;\
             wait-ms =<40>;\
