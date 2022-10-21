@@ -46,7 +46,7 @@
         };
     };
 
-    behaviors {
+    /* behaviors { */
         /* quotes_macro: quotes_macro { */
         /*     compatible = "zmk,behavior-hold-tap"; */
         /*     label = "QUOTES_MACRO"; */
@@ -64,7 +64,7 @@
         /*     tapping-term-ms = <140>; */
         /*     bindings = <&mt LS(N2) LS(NUHS)>, <&quotes_macro 0 0>; */
         /* }; */
-    };
+    /* }; */
 
     macros {
         d_quo: d_quo {
