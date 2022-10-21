@@ -54,7 +54,8 @@
             flavor = "hold-preferred";
             tapping-term-ms = <140>;
             quick-tap-ms = <140>;
-            bindings = <&d_quo>, <&s_quo>;
+            /* bindings = <&d_quo>, <&s_quo>; */
+            bindings = <&trans>, <&trans>;
         };
         td_quo: tap_dance_quotes {
             compatible = "zmk,behavior-tap-dance";
@@ -66,24 +67,24 @@
     };
 
     macros {
-        d_quo: d_quo {
-            label = "ZM_d_quo";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms =<40>;
-            tap-ms =<40>;
-            bindings
-                = <&kp LS(N2) &kp LS(N2) &kp LEFT>;
-        };
-        s_quo: s_quo {
-            label = "ZM_s_quo";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms =<40>;
-            tap-ms =<40>;
-            bindings
-                = <&kp LS(NUHS) &kp LS(NUHS) &kp LEFT>;
-        };
+        /* d_quo: d_quo { */
+            /* label = "ZM_d_quo"; */
+            /* compatible = "zmk,behavior-macro"; */
+            /* #binding-cells = <0>; */
+            /* wait-ms =<40>; */
+            /* tap-ms =<40>; */
+            /* bindings */
+                /* = <&kp LS(N2) &kp LS(N2) &kp LEFT>; */
+        /* }; */
+        /* s_quo: s_quo { */
+            /* label = "ZM_s_quo"; */
+            /* compatible = "zmk,behavior-macro"; */
+            /* #binding-cells = <0>; */
+            /* wait-ms =<40>; */
+            /* tap-ms =<40>; */
+            /* bindings */
+                /* = <&kp LS(NUHS) &kp LS(NUHS) &kp LEFT>; */
+        /* }; */
     };
 
     keymap {
