@@ -47,21 +47,21 @@
     };
 
     behaviors {
-        mac_ht: macro_hold_tap {
+        quotes_macro: quotes_macro {
             compatible = "zmk,behavior-hold-tap";
-            label = "MACRO-HOLD_TAP";
-            #binding-cells = <2>;
+            label = "QUOTES_MACRO";
+            #binding-cells = <>;
             flavor = "hold-preferred";
             tapping-term-ms = <140>;
             quick-tap-ms = <140>;
-            bindings = <>, <>;
+            bindings = <&d_quo>, <&s_quo>;
         };
         td_quo: tap_dance_quotes {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_QUOTES";
             #binding-cells = <0>;
             tapping-term-ms = <140>;
-            bindings = <&mt LS(N2) LS(NUHS)>, <&mac_ht &d_quo &s_quo>;
+            bindings = <&mt LS(N2) LS(NUHS)>, <&quotes_macro>;
         };
     };
 
