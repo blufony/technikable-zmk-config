@@ -46,7 +46,26 @@
         };
     };
 
+#define hold_tap_tap_dance_two_macros(labl, a1, a2, m1, m2) ht_labl: ht_labl {\
+            compatible = "zmk,behavior-hold-tap";\
+            label = "ht_labl";\
+            #binding-cells = <2>;\
+            flavor = "hold-preferred";\
+            tapping-term-ms = <140>;\
+            quick-tap-ms = <140>;\
+            bindings = <m2>, <m1>;\
+        };\
+    labl: labl {\
+            compatible = "zmk,behavior-tap-dance";\
+            label = "labl";\
+            #binding-cells = <0>;\
+            tapping-term-ms = <140>;\
+            bindings = <&mt a2 a1>, <&ht_labl 0 0>;\
+        };
+
+
     behaviors {
+        hold_tap_tap_dance_two_macros(td_parents, LS(8), LS(9), &parents_in, &parents_out)
         quotes_hold_tap: quotes_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "QUOTES_HOLD_TAP";
@@ -72,7 +91,7 @@
             tapping-term-ms = <140>;
             quick-tap-ms = <140>;
             /* bindings = <&d_quo>, <&s_quo>; */
-            bindings = <&brack_in>, <&brack_out>;
+            bindings = <&brack_out>, <&brack_in>;
         };
         td_brak: tap_dance_brackets {
             compatible = "zmk,behavior-tap-dance";
@@ -102,42 +121,44 @@ label = "l2";\
 
     macros {
         two_macros(parents_in, parents_out, <&kp LS(N8) &kp LS(N9) &kp LEFT>, <&kp LS(N8) &kp LS(N9)>)
-        d_quo: d_quo {
-            label = "ZM_d_quo";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms =<40>;
-            tap-ms =<40>;
-            bindings
-                = <&kp LS(N2) &kp LS(N2) &kp LEFT>;
-        };
-        s_quo: s_quo {
-            label = "ZM_s_quo";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms =<40>;
-            tap-ms =<40>;
-            bindings
-                = <&kp LS(NUHS) &kp LS(NUHS) &kp LEFT>;
-        };
-        brack_in: brackets_going_in {
-            label = "BRACKETS-GOING_IN";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms =<40>;
-            tap-ms =<40>;
-            bindings
-                = <&kp RA(N8) &kp RA(N9) &kp LEFT>;
-        };
-        brack_out: brackets_staying_out {
-            label = "BRACKETS_STAYING_OUT";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms =<40>;
-            tap-ms =<40>;
-            bindings
-                = <&kp RA(N8) &kp RA(N9)>;
-        };
+        two_macros(d_quo, s_quo, <&kp LS(N2) &kp LS(N2) &kp LEFT>, <&kp LS(NUHS) &kp LS(NUHS) &kp LEFT>)
+        two_macros(brack_in, brack_out, <&kp RA(N8) &kp RA(N9) &kp LEFT>, <&kp RA(N8) &kp RA(N9)>)
+        /* d_quo: d_quo { */
+        /*     label = "ZM_d_quo"; */
+        /*     compatible = "zmk,behavior-macro"; */
+        /*     #binding-cells = <0>; */
+        /*     wait-ms =<40>; */
+        /*     tap-ms =<40>; */
+        /*     bindings */
+        /*         = <&kp LS(N2) &kp LS(N2) &kp LEFT>; */
+        /* }; */
+        /* s_quo: s_quo { */
+        /*     label = "ZM_s_quo"; */
+        /*     compatible = "zmk,behavior-macro"; */
+        /*     #binding-cells = <0>; */
+        /*     wait-ms =<40>; */
+        /*     tap-ms =<40>; */
+        /*     bindings */
+        /*         = <&kp LS(NUHS) &kp LS(NUHS) &kp LEFT>; */
+        /* }; */
+        /* brack_in: brackets_going_in { */
+        /*     label = "BRACKETS-GOING_IN"; */
+        /*     compatible = "zmk,behavior-macro"; */
+        /*     #binding-cells = <0>; */
+        /*     wait-ms =<40>; */
+        /*     tap-ms =<40>; */
+        /*     bindings */
+        /*         = <&kp RA(N8) &kp RA(N9) &kp LEFT>; */
+        /* }; */
+        /* brack_out: brackets_staying_out { */
+        /*     label = "BRACKETS_STAYING_OUT"; */
+        /*     compatible = "zmk,behavior-macro"; */
+        /*     #binding-cells = <0>; */
+        /*     wait-ms =<40>; */
+        /*     tap-ms =<40>; */
+        /*     bindings */
+        /*         = <&kp RA(N8) &kp RA(N9)>; */
+        /* }; */
     };
 
     keymap {
@@ -157,7 +178,7 @@ label = "l2";\
             label = "Nav";
             bindings = <
                 &kp LC(BSPC) &kp RA(Q)  &kp EQUAL  &td_quo     &mt LS(MINUS) LS(N1)  &kp NUHS       &kp RBKT     &kp N7         &kp N8      &kp N9     &as(NUBS)     &trans
-                &trans       &kp RA(NUBS)     &td_brak     &parents_in      &parents_out                &trans       &trans     &kp LARW       &kp DARW    &kp UARW   &kp RARW   &trans
+                &trans       &kp RA(NUBS)     &td_brak     &parents_in      &parents_out                &td_parents       &trans     &kp LARW       &kp DARW    &kp UARW   &kp RARW   &trans
                 &bt BT(0)    &bt BT(1)  &bt BT(2)  &bt BT(3)   &bt BT(4)             &trans       &trans     &kp HOME       &kp PG_DN   &kp PG_UP  &kp END    &trans
                                         &trans     &trans      &trans                &trans       &trans    &trans  &trans         &trans
             >;
