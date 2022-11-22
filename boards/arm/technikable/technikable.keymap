@@ -113,7 +113,7 @@ label = #l2;\
             bindings = <
                 &kp LC(BSPC) &kp RA(Q)     &kp EQUAL  &td_quo     &mt LS(MINUS) LS(N1)  &kp NUHS     &kp RBKT              &kp N7         &kp N8      &kp N9     &as(NUBS)  &bootloader
                 &trans       &kp RA(NUBS)  &td_brak   &td_parents &td_brace             &kp LS(N6)   &kp SLASH             &kp N4         &kp N5      &kp N6     &kp N0     &trans
-                &trans       &kp LS(N4)    &kp GRAVE  &kp RA(E)   &kp LS(5)             &kp RA(RBKT) &mt RA(MINUS) LS(N7)  &kp N1         &kp N2      &kp N3     &kp GRAVE  &trans
+                &trans       &kp LS(N4)    &kp GRAVE  &kp RA(E)   &kp LS(N5)             &kp RA(RBKT) &mt RA(MINUS) LS(N7)  &kp N1         &kp N2      &kp N3     &kp GRAVE  &trans
                                            &trans     &trans      &trans                &trans       &trans                &trans         &trans      &trans
             >;
         };
@@ -121,10 +121,10 @@ label = #l2;\
         num_layer {
             label = "Num";
             bindings = <
-&trans     &kp LBKT   &kp N7     &kp N8      &kp N9    &kp RBKT    &kp C_PREV    &trans         &trans       &trans       &trans     &trans
-&trans     &kp SEMI   &kp N4     &kp N5      &kp N6    &kp EQUAL   &kp C_NEXT    &trans         &trans       &trans       &trans     &trans
-&trans     &kp GRAVE  &kp N1     &kp N2      &kp N3    &kp BSLH    &trans        &trans         &trans       &trans       &trans     &trans
-                     &trans     &kp N0      &kp MINUS    &none         &none     &kp ESC        &kp DEL      &trans
+                &trans     &kp LBKT   &kp N7     &kp N8      &kp N9    &kp RBKT    &kp C_PREV    &trans         &trans       &trans       &trans     &trans
+                &trans     &kp SEMI   &kp N4     &kp N5      &bt BT_CLEAR    &bt BT_NXT   &kp C_NEXT    &trans         &trans       &trans       &trans     &trans
+                &trans     &kp GRAVE  &kp N1     &kp N2      &kp N3    &kp BSLH    &trans        &trans         &trans       &trans       &trans     &trans
+                                      &trans     &kp N0      &kp MINUS    &none         &none     &kp ESC        &kp DEL      &trans
             >;
         };
 
